@@ -39,7 +39,7 @@ map.on('load', function () {
   });
   map.addSource('local_choropleth', {
     type: 'geojson',
-    data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/local_choropleth.geojson'
+    data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/new_choropleth.geojson'
   });
   map.addLayer({
     'id': 'World points',

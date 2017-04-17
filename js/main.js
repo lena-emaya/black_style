@@ -44,7 +44,7 @@ map.on('load', function () {
   map.addLayer({
     'id': 'World points',
     'type': 'circle',
-    'maxzoom': 5,
+    'maxzoom': 4.9,
     'source': 'stray_point',
     'paint': {
       'circle-radius': {
@@ -57,10 +57,10 @@ map.on('load', function () {
           [5, 3]
         ]
       },
-      'circle-color': '#2E94B9',
+      'circle-color': '#FECEA8',
       'circle-opacity': 0.65,
-      'circle-stroke-width': 0.1,
-      'circle-stroke-color': '#2E94B9',
+      'circle-stroke-width': 0.4,
+      'circle-stroke-color': '#FECEA8',
       'circle-stroke-opacity': 0.35
     }
   });
@@ -75,21 +75,22 @@ map.on('load', function () {
       'fill-color': {
         property: 'classify',
         stops: [
-          [1, '#303841'],
-          [2, '#47555E'],
-          [3, '#303841'],
-          [4, '#47555E'],
-          [5, '#F7F7F7']
+          [1, '#A6A6A6'],
+          [2, '#303841'],
+          [3, '#3A4750'],
+          [4, '#303841'],
+          [5, '#3A4750']
         ]
       },
       'fill-outline-color': '#000000',
-      'fill-opacity': 0.45
+      'fill-opacity': 0.35
     }
   }, 'waterway-label');
   map.addLayer({
     'id': 'World markers',
     'type': 'symbol',
-    'source': 'world_dot',
+    'minzoom': 5,
+    'source': 'stray_point',
     'layout': {
       'icon-image': 'marker_test',
       'icon-size': 0.4

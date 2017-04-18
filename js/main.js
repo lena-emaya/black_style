@@ -119,13 +119,13 @@ map.on('load', function () {
       'fill-color': {
         property: 'class',
         stops: [
-          [0, '#FF9898'],
-          [1, '#CF455C'],
-          [2, '#971549'],
-          [3, '#971549']
+          [0, '#FECEA8'],
+          [1, '#FF847B'],
+          [2, '#E84A5F'],
+          [3, '#2A363B']
         ]
       },
-      'fill-outline-color': '#ED8282',
+      'fill-outline-color': '#000000',
       'fill-opacity': 0.25
     }
   }, 'waterway-label');

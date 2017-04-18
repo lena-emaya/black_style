@@ -41,6 +41,10 @@ map.on('load', function () {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/new_choropleth.geojson'
   });
+  map.addSource('grid', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/grid_classified.geojson'
+  });
   map.addLayer({
     'id': 'World points',
     'type': 'circle',
@@ -108,15 +112,16 @@ map.on('load', function () {
   map.addLayer({
     'id': 'Local choropleth',
     'type': 'fill',
-    'source': 'local_choropleth',
+    'source': 'grid',
     'minzoom': 6,
     'paint': {
       'fill-antialias': true,
       'fill-color': {
         property: 'class',
         stops: [
-          [1, '#FF9898'],
-          [2, '#CF455C'],
+          [0, '#FF9898'],
+          [1, '#CF455C'],
+          [2, '#971549'],
           [3, '#971549']
         ]
       },

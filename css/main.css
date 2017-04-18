@@ -27,21 +27,28 @@ body {
   -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
 }
 
-/*#menumap {
+#stylesmenu {
   position: absolute;
-  background: #fff;
-  padding: 25px;
+  z-index: 3;
+  width: 200px;
+  padding: 7px;
+  text-indent: 17px;
+  height:75px;
+  top: 40px;
   font-family: 'HelveticaNeue-Light';
+  font-size: 14px;
   color: #333;
-}*/
-#menu2{
+}
+
+
+#Title{
   background: #fff;
   position: absolute;
   z-index: 3;
-  width: 147px;
+  width: 200px;
   height:45px;
   text-indent: 17px;
-  font-family: 'HelveticaNeue-Light';
+  font-family: 'HelveticaNeue-Bold';
   font-size: 15px;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
@@ -53,11 +60,11 @@ body {
   opacity: 0.75;
   position: absolute;
   z-index: 1;
-  top: 60px;
-  height:215px;
-  width: 147px;
+  height:285px;
+  width: 200px;
+
   text-indent: 20px;
-  font-family: 'HelveticaNeue-Light';
+  font-family: 'HelveticaNeue';
   font-size: 14px;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
@@ -68,7 +75,7 @@ body {
   background: #fff;
   position: absolute;
   z-index: 2;
-  top: 100px;
+  top: 150px;
   left: 10px;
   width: 120px;
   border: 1px solid #E3E3E3;

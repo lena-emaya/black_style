@@ -48,7 +48,7 @@ map.on('load', function () {
   map.addLayer({
     'id': 'World points',
     'type': 'circle',
-    'maxzoom': 4.9,
+    'maxzoom': 8,
     'source': 'stray_point',
     'paint': {
       'circle-radius': {
@@ -90,23 +90,27 @@ map.on('load', function () {
       'fill-opacity': 0.35
     }
   }, 'waterway-label');
-  map.addLayer({
-    'id': 'World markers',
-    'type': 'symbol',
-    'minzoom': 5,
-    'source': 'stray_point',
-    'layout': {
-      'icon-image': 'marker_test',
-      'icon-size': 0.4
-    }
-  });
+  // map.addLayer({
+  //   'id': 'World markers',
+  //   'type': 'symbol',
+  //   'minzoom': 5,
+  //   'source': 'stray_point',
+  //   'layout': {
+  //     'icon-image': 'map_marker_dark',
+  //     'icon-size': 0.2
+  //   }
+  // });
   map.addLayer({
     'id': 'Local points',
-    'type': 'symbol',
+    'type': 'circle',
     'source': 'local_point',
-    'layout': {
-      'icon-image': 'marker_test',
-      'icon-size': 0.45
+    'paint': {
+      'circle-radius': 3,
+      'circle-color': '#FECEA8',
+      'circle-opacity': 0.65,
+      'circle-stroke-width': 0.4,
+      'circle-stroke-color': '#FECEA8',
+      'circle-stroke-opacity': 0.35
     }
   });
   map.addLayer({
@@ -156,7 +160,7 @@ map.on('load', function () {
 
 
 
-  var toggleableLayerIds = ['World points', 'World markers', 'World choropleth', 'Local points','Local choropleth'];
+  var toggleableLayerIds = ['World points', 'World choropleth', 'Local points','Local choropleth'];
 
   for (var k = 0; k < toggleableLayerIds.length; k++) {
     var id = toggleableLayerIds[k];

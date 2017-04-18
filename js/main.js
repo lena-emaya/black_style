@@ -22,19 +22,19 @@ map.on('load', function () {
     map.on('style.load', function() {
       map.addSource('stray_point', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/stray_point.geojson'
+        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/stray_point.geojson'
       });
       map.addSource('stray_polygon', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/stray_polygon.geojson'
+        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/stray_polygon.geojson'
       });
       map.addSource('local_point', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/local_point2.geojson'
+        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/local_point2.geojson'
       });
       map.addSource('world_dot', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/world_dot.geojson'
+        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/world_dot.geojson'
       });
       map.addSource('local_choropleth', {
         type: 'geojson',
@@ -60,10 +60,10 @@ map.on('load', function () {
               [5, 3]
             ]
           },
-          'circle-color': '#3BB4C1',
+          'circle-color': '#B52330',
           'circle-opacity': 0.65,
           'circle-stroke-width': 0.4,
-          'circle-stroke-color': '#3BB4C1',
+          'circle-stroke-color': '#B52330',
           'circle-stroke-opacity': 0.35
         }
       });
@@ -78,17 +78,20 @@ map.on('load', function () {
           'fill-color': {
             property: 'classify',
             stops: [
-              [1, '#303841'],
-              [2, '#47555E'],
-              [3, '#303841'],
-              [4, '#47555E'],
-              [5, '#EEEEEE']
+              [1, '#F7EBC9'],
+              [2, '#F2CC96'],
+              [3, '#F2CC96'],
+              [4, '#D35823'],
+              [5, '#D35823']
             ]
-          },
-          'fill-outline-color': '#000000',
-          'fill-opacity': 0.45
-        }
+            },
+            'fill-opacity': 0.15
+        },
+        // 'fill-outline-color': '#000000',
+        // 'fill-opacity': 0.15
+
       }, 'waterway-label');
+
       // map.addLayer({
       //   'id': 'Local_points2',
       //   'type': 'symbol',
@@ -125,11 +128,10 @@ map.on('load', function () {
             stops: [
               [0, '#FF801F'],
               [1, '#FFCD00'],
-              [2, '#E84A5F'],
-              [3, '#A8B6BF']
+              [2, '#FF0000']
             ]
           },
-          'fill-opacity': 0.35
+          'fill-opacity': 0.25
         }
       }, 'waterway-label');
     });

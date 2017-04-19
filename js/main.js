@@ -1,3 +1,20 @@
+// var geojson = {
+//     "type": "FeatureCollection",
+//     "features": [{
+//         "type": "Feature",
+//         "geometry": {
+//             "type": "LineString",
+//             "properties": {},
+//             "coordinates": [
+//                 [-77.0366048812866, 38.89873175227713],
+//                 [-77.03364372253417, 38.89876515143842]
+//             ]
+//         }
+//     }]
+// };
+
+
+
 mapboxgl.accessToken = 'pk.eyJ1IjoieWFjb25zdHJ1Y3QiLCJhIjoiY2l6NDFpN3k1MDAyZjJxbHdhcHU2eHQ0ZyJ9.8TtgxnHPThgkyXRDGGYMlQ';
 var map = new mapboxgl.Map({
   container: 'map',
@@ -92,30 +109,30 @@ map.on('load', function () {
 
       }, 'waterway-label');
 
-      map.addLayer({
-        'id': 'Local points',
-        'type': 'symbol',
-        // 'minzoom': 13,
-        'source': 'local_point',
-        'layout': {
-          'icon-image': 'for3style',
-          'icon-size': 0.4
-        }
-      });
       // map.addLayer({
       //   'id': 'Local points',
-      //   'type': 'circle',
-      //   'maxzoom': 13,
+      //   'type': 'symbol',
+      //   'minzoom': 13,
       //   'source': 'local_point',
-      //   'paint': {
-      //     'circle-radius': 3,
-      //     'circle-color': '#FF1C42',
-      //     'circle-opacity': 0.65,
-      //     'circle-stroke-width': 0.4,
-      //     'circle-stroke-color': '#FF1C42',
-      //     'circle-stroke-opacity': 0.35
+      //   'layout': {
+      //     'icon-image': 'for3style',
+      //     'icon-size': 0.4
       //   }
       // });
+      map.addLayer({
+        'id': 'Local points',
+        'type': 'circle',
+        // 'maxzoom': 13,
+        'source': 'local_point',
+        'paint': {
+          'circle-radius': 3,
+          'circle-color': '#FF1C42',
+          'circle-opacity': 0.85,
+          'circle-stroke-width': 0.4,
+          'circle-stroke-color': '#FF1C42',
+          'circle-stroke-opacity': 0.35
+        }
+      });
       map.addLayer({
         'id': 'Local grid',
         'type': 'fill',
@@ -131,8 +148,8 @@ map.on('load', function () {
               [2, '#FF0000']
             ]
           },
-          'fill-outline-color': '#000000',
-          'fill-opacity': 0.25
+          'fill-outline-color': '#8C8C8C',
+          'fill-opacity': 0.2
         }
       }, 'waterway-label');
     });
@@ -141,22 +158,6 @@ map.on('load', function () {
   for (var i = 0; i < inputs.length; i++) {
     inputs[i].onclick = switchLayer;
   }
-
-
-
-
-
-
-
-
-
-
-//   map.on('click', function (e) {
-//
-//     var features1 = map.queryRenderedFeatures(e.point, { layers: ['Local points'] });
-//     console.log(features1);
-//     }
-// );
 
 
 
@@ -184,7 +185,6 @@ map.on('load', function () {
       if (visibility === 'visible') {
         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
         this.className = '';
-
       } else {
         this.className = 'active';
         map.setLayoutProperty(clickedLayer, 'visibility', 'visible');

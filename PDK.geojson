@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Хамовники", "description": "ПДК = 1.9", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5696373, 55.7198593, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Гурьевский проезд", "description": "ПДК = 1.2", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.7506328, 55.6053419, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ул. Введенского", "description": "ПДК = 1.1", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5413883, 55.6425606, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Люблино", "description": "ПДК = 0.8", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.7425432, 55.6692897, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Глебовская", "description": "ПДК = 0.8", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 38.4167325, 55.5993717, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Останкино", "description": " ПДК = 0.6", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6155031, 55.8184515, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Долгопрудная ул.", "description": "ПДК = 0.1", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5365281, 55.8935316, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ул. Туристская", "description": "ПДК = 0.8", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.4229097, 55.8555761, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "МГУ", "description": " ПДК = 0.1", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.521733, 55.7066654, 0.0 ] } }
+]
+}

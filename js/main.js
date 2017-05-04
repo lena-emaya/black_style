@@ -1,19 +1,3 @@
-// var geojson = {
-//     "type": "FeatureCollection",
-//     "features": [{
-//         "type": "Feature",
-//         "geometry": {
-//             "type": "LineString",
-//             "properties": {},
-//             "coordinates": [
-//                 [-77.0366048812866, 38.89873175227713],
-//                 [-77.03364372253417, 38.89876515143842]
-//             ]
-//         }
-//     }]
-// };
-
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoieWFjb25zdHJ1Y3QiLCJhIjoiY2l6NDFpN3k1MDAyZjJxbHdhcHU2eHQ0ZyJ9.8TtgxnHPThgkyXRDGGYMlQ';
 var map = new mapboxgl.Map({

@@ -1,9 +1,8 @@
-
 mapboxgl.accessToken = 'pk.eyJ1IjoieWFjb25zdHJ1Y3QiLCJhIjoiY2l6NDFpN3k1MDAyZjJxbHdhcHU2eHQ0ZyJ9.8TtgxnHPThgkyXRDGGYMlQ';
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/yaconstruct/cizqy155s00ko2sqj64v6n1kn',
-  zoom: 2,
+  style: 'mapbox://styles/yaconstruct/cj2etc07z00ab2rqnxtsxy4vl',
+  zoom: 8,
   center: [37.634, 55.742]
 });
 
@@ -14,134 +13,6 @@ map.on('load', function () {
     var x = map.getZoom();
     document.getElementById('panelzoom').innerHTML = '<p>Current zoom</p>' + (Number(x).toFixed(1));
   });
-  var layerList = document.getElementById('stylesmenu');
-  var inputs = layerList.getElementsByTagName('input');
-
-  function switchLayer(layer) {
-    var layerId = layer.target.id;
-    map.setStyle('mapbox://styles/yaconstruct/' + layerId);
-    map.on('style.load', function() {
-      map.addSource('stray_point', {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/stray_point.geojson'
-      });
-      map.addSource('stray_polygon', {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/stray_polygon.geojson'
-      });
-      map.addSource('local_point', {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/local_point2.geojson'
-      });
-      map.addSource('world_dot', {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/world_dot.geojson'
-      });
-      map.addSource('local_choropleth', {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/new_choropleth.geojson'
-      });
-      map.addSource('grid', {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/lena-emaya/black_style/master/grid_classified.geojson'
-      });
-      map.addLayer({
-        'id': 'World points',
-        'type': 'circle',
-        'maxzoom': 8,
-        'source': 'stray_point',
-        'paint': {
-          'circle-radius': {
-            property: 'class',
-            stops: [
-              [1, 1],
-              [2, 2],
-              [3, 6],
-              [4, 4],
-              [5, 3]
-            ]
-          },
-          'circle-color': '#FF1C42',
-          'circle-opacity': 0.65,
-          'circle-stroke-width': 0.4,
-          'circle-stroke-color': '#FF1C42',
-          'circle-stroke-opacity': 0.35
-        }
-      });
-
-      map.addLayer({
-        'id': 'World choropleth',
-        'type': 'fill',
-        'maxzoom': 5,
-        'source': 'stray_polygon',
-        'paint': {
-          'fill-antialias': true,
-          'fill-color': {
-            property: 'classify',
-            stops: [
-              [1, '#F7EBC9'],
-              [2, '#E8BA6B'],
-              [3, '#E8BA6B'],
-              [4, '#D35823'],
-              [5, '#D35823']
-            ]
-            },
-            'fill-opacity': 0.15
-        },
-        // 'fill-outline-color': '#000000',
-        // 'fill-opacity': 0.15
-
-      }, 'waterway-label');
-
-      // map.addLayer({
-      //   'id': 'Local points',
-      //   'type': 'symbol',
-      //   'minzoom': 13,
-      //   'source': 'local_point',
-      //   'layout': {
-      //     'icon-image': 'for3style',
-      //     'icon-size': 0.4
-      //   }
-      // });
-      map.addLayer({
-        'id': 'Local points',
-        'type': 'circle',
-        // 'maxzoom': 13,
-        'source': 'local_point',
-        'paint': {
-          'circle-radius': 3,
-          'circle-color': '#FF1C42',
-          'circle-opacity': 0.85,
-          'circle-stroke-width': 0.4,
-          'circle-stroke-color': '#FF1C42',
-          'circle-stroke-opacity': 0.35
-        }
-      });
-      map.addLayer({
-        'id': 'Local grid',
-        'type': 'fill',
-        'source': 'grid',
-        'minzoom': 6,
-        'paint': {
-          'fill-antialias': true,
-          'fill-color': {
-            property: 'class',
-            stops: [
-              [0, '#FF801F'],
-              [1, '#FFCD00'],
-              [2, '#FF0000']
-            ]
-          },
-          'fill-outline-color': '#8C8C8C',
-          'fill-opacity': 0.2
-        }
-      }, 'waterway-label');
-    });
-  }
-
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].onclick = switchLayer;
-  }
 
 
 
@@ -149,7 +20,158 @@ map.on('load', function () {
 
 
 
-  var toggleableLayerIds = ['World points', 'World choropleth', 'Local points','Local grid'];
+
+  map.addSource('stray_point', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/stray_point.geojson'
+  });
+  map.addSource('stray_polygon', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/stray_polygon.geojson'
+  });
+  map.addSource('local_point', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/local_point2.geojson'
+  });
+  map.addSource('world_dot', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/world_dot.geojson'
+  });
+  map.addSource('local_choropleth', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/local_choropleth.geojson'
+  });
+  map.addLayer({
+    'id': 'World points',
+    'type': 'circle',
+    'maxzoom': 5,
+    'source': 'stray_point',
+    'paint': {
+      'circle-radius': {
+        property: 'class',
+        stops: [
+          [1, 1],
+          [2, 2],
+          [3, 6],
+          [4, 4],
+          [5, 3]
+        ]
+      },
+      'circle-color': '#FFF2BE',
+      'circle-opacity': 0.75,
+      'circle-stroke-width': 0.9,
+      'circle-stroke-color': '#FFF2BE',
+      'circle-stroke-opacity': 0.15
+    }
+  });
+
+
+  map.addLayer({
+    'id': 'World choropleth',
+    'type': 'fill',
+    'maxzoom': 5,
+    'source': 'stray_polygon',
+    'paint': {
+      'fill-antialias': true,
+      'fill-color': {
+        property: 'classify',
+        stops: [
+          [1, '#41444B'],
+          [2, '#41444B'],
+          [3, '#52575D'],
+          [4, '#DFD8C8'],
+          [5, '#52575D']
+        ]
+      },
+      'fill-outline-color': '#000000',
+      'fill-opacity': 0.35
+    }
+  }, 'waterway-label');
+  // map.addLayer({
+  //   'id': 'World markers',
+  //   'type': 'symbol',
+  //   'source': 'world_dot',
+  //   'layout': {
+  //     'icon-image': 'marker_test',
+  //     'icon-size': 0.4
+  //   }
+  // });
+  // map.addLayer({
+  //   'id': 'Local points',
+  //   'type': 'symbol',
+  //   'source': 'local_point',
+  //   'layout': {
+  //     'icon-image': 'marker_test',
+  //     'icon-size': 0.45
+  //   }
+  // });
+  map.addLayer({
+    'id': 'Local choropleth',
+    'type': 'fill',
+    'source': 'local_choropleth',
+    'minzoom': 7,
+    'paint': {
+      'fill-antialias': true,
+      'fill-color': {
+        property: 'class',
+        stops: [
+          [1, '#CBDBD8'],
+          [2, '#576573'],
+          [3, '#3E4149']
+        ]
+      },
+      'fill-outline-color': '#3E4149',
+      'fill-opacity': 0.25
+    }
+  }, 'waterway-label');
+
+
+  map.addLayer({
+    'id': 'Local points',
+    'type': 'circle',
+    'minzoom': 7,
+    'source': 'local_point',
+    'paint': {
+      'circle-radius': {
+        'stops': [[5, 1], [22, 8]]
+      },
+      'circle-color': '#FFF2BE',
+      'circle-opacity': 1,
+      'circle-stroke-width': {
+        'stops': [[10, 0],[11, 1], [22, 4]]
+      },
+      'circle-stroke-color': '#FFF2BE',
+      'circle-stroke-opacity': 0.45
+    }
+  });
+
+  // var layerList = document.getElementById('menumap');
+  // var inputs = layerList.getElementsByTagName('input');
+  //
+  // function switchLayer(layer) {
+  //   var layerId = layer.target.id;
+  //   map.setStyle('mapbox://styles/lenaemaya/' + layerId);
+  // }
+  //
+  // for (var i = 0; i < inputs.length; i++) {
+  //   inputs[i].onclick = switchLayer;
+  // }
+
+
+//   map.on('click', function (e) {
+//
+//     var features1 = map.queryRenderedFeatures(e.point, { layers: ['Local points'] });
+//     console.log(features1);
+//     }
+// );
+
+
+
+
+
+
+
+  var toggleableLayerIds = ['World points', 'World choropleth', 'Local points','Local choropleth'];
 
   for (var k = 0; k < toggleableLayerIds.length; k++) {
     var id = toggleableLayerIds[k];
@@ -169,6 +191,7 @@ map.on('load', function () {
       if (visibility === 'visible') {
         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
         this.className = '';
+
       } else {
         this.className = 'active';
         map.setLayoutProperty(clickedLayer, 'visibility', 'visible');

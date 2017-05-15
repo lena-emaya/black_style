@@ -84,7 +84,7 @@ map.on('load', function () {
         ]
       },
       'fill-outline-color': '#000000',
-      'fill-opacity': 0.6
+      'fill-opacity': 0.5
     }
   }, 'waterway-label');
   // map.addLayer({

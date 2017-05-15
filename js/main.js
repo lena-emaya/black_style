@@ -72,15 +72,15 @@ map.on('load', function () {
     'maxzoom': 5,
     'source': 'stray_polygon',
     'paint': {
-      'fill-antialias': true,
+      'fill-antialias': false,
       'fill-color': {
         property: 'classify',
         stops: [
-          [1, '#41444B'],
-          [2, '#41444B'],
-          [3, '#191519'],
-          [4, '#DFD8C8'],
-          [5, '#191519']
+          [1, '#916dff'],
+          [2, '#916dff'],
+          [3, '#5700D9'],
+          [4, '#6633FF'],
+          [5, '#6633FF']
         ]
       },
       'fill-outline-color': '#000000',
@@ -120,7 +120,7 @@ map.on('load', function () {
           [3, '#004CFF']
         ]
       },
-      'fill-outline-color': '#fff',
+      'fill-outline-color': '#80A7BA',
       'fill-opacity': 0.6
     }
   }, 'waterway-label');

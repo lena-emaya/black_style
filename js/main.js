@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoieWFjb25zdHJ1Y3QiLCJhIjoiY2l6NDFpN3k1MDAyZjJxbHdhcHU2eHQ0ZyJ9.8TtgxnHPThgkyXRDGGYMlQ';
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/yaconstruct/cj2etc07z00ab2rqnxtsxy4vl',
+  style: 'mapbox://styles/yaconstruct/cj2p2inm7004a2sn0rifl3vrv',
   zoom: 8,
   center: [37.634, 55.742]
 });
@@ -57,11 +57,11 @@ map.on('load', function () {
           [5, 3]
         ]
       },
-      'circle-color': '#FFF2BE',
-      'circle-opacity': 0.75,
+      'circle-color': '#FFE34C',
+      'circle-opacity': 0.85,
       'circle-stroke-width': 0.9,
-      'circle-stroke-color': '#FFF2BE',
-      'circle-stroke-opacity': 0.15
+      'circle-stroke-color': '#FFE34C',
+      'circle-stroke-opacity': 0.25
     }
   });
 
@@ -78,13 +78,13 @@ map.on('load', function () {
         stops: [
           [1, '#41444B'],
           [2, '#41444B'],
-          [3, '#52575D'],
+          [3, '#191519'],
           [4, '#DFD8C8'],
-          [5, '#52575D']
+          [5, '#191519']
         ]
       },
       'fill-outline-color': '#000000',
-      'fill-opacity': 0.35
+      'fill-opacity': 0.6
     }
   }, 'waterway-label');
   // map.addLayer({
@@ -115,13 +115,13 @@ map.on('load', function () {
       'fill-color': {
         property: 'class',
         stops: [
-          [1, '#CBDBD8'],
-          [2, '#576573'],
-          [3, '#3E4149']
+          [1, '#4CE5FF'],
+          [2, '#0099FF'],
+          [3, '#004CFF']
         ]
       },
-      'fill-outline-color': '#3E4149',
-      'fill-opacity': 0.25
+      'fill-outline-color': '#fff',
+      'fill-opacity': 0.6
     }
   }, 'waterway-label');
 
@@ -135,12 +135,12 @@ map.on('load', function () {
       'circle-radius': {
         'stops': [[5, 1], [22, 8]]
       },
-      'circle-color': '#FFF2BE',
+      'circle-color': '#ffdb4d',
       'circle-opacity': 1,
       'circle-stroke-width': {
         'stops': [[10, 0],[11, 1], [22, 4]]
       },
-      'circle-stroke-color': '#FFF2BE',
+      'circle-stroke-color': '#ffdb4d',
       'circle-stroke-opacity': 0.45
     }
   });

@@ -41,29 +41,7 @@ map.on('load', function () {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/lena-emaya/construct/master/local_choropleth.geojson'
   });
-  map.addLayer({
-    'id': 'World points',
-    'type': 'circle',
-    'maxzoom': 5,
-    'source': 'stray_point',
-    'paint': {
-      'circle-radius': {
-        property: 'class',
-        stops: [
-          [1, 1],
-          [2, 2],
-          [3, 6],
-          [4, 4],
-          [5, 3]
-        ]
-      },
-      'circle-color': '#FFE34C',
-      'circle-opacity': 0.85,
-      'circle-stroke-width': 0.9,
-      'circle-stroke-color': '#FFE34C',
-      'circle-stroke-opacity': 0.25
-    }
-  });
+
 
 
   map.addLayer({
@@ -85,6 +63,30 @@ map.on('load', function () {
       },
       'fill-outline-color': '#000000',
       'fill-opacity': 0.5
+    }
+  });
+
+  map.addLayer({
+    'id': 'World points',
+    'type': 'circle',
+    'maxzoom': 5,
+    'source': 'stray_point',
+    'paint': {
+      'circle-radius': {
+        property: 'class',
+        stops: [
+          [1, 1],
+          [2, 2],
+          [3, 6],
+          [4, 4],
+          [5, 3]
+        ]
+      },
+      'circle-color': '#FFE34C',
+      'circle-opacity': 0.85,
+      'circle-stroke-width': 0.9,
+      'circle-stroke-color': '#FFE34C',
+      'circle-stroke-opacity': 0.25
     }
   });
   // map.addLayer({

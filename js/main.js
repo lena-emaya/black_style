@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoieWFjb25zdHJ1Y3QiLCJhIjoiY2l6NDFpN3k1MDAyZjJxbHdhcHU2eHQ0ZyJ9.8TtgxnHPThgkyXRDGGYMlQ';
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/yaconstruct/cj2uexjw8000p2sln2eymua53',
+  style: 'mapbox://styles/yaconstruct/cj2vowt7x00082roddpxyor6l',
   zoom: 8,
   center: [37.634, 55.742]
 });
@@ -206,6 +206,36 @@ map.on('load', function () {
   }
 });
 
+
+var toggleLayerIds = [ 'Vegetation'];
+
+for (var k = 0; k < toggleLayerIds.length; k++) {
+    var id = toggleLayerIds[k];
+
+    var link = document.createElement('a');
+    link.href = '#';
+    link.className = 'active';
+    link.textContent = id;
+
+    link.onclick = function (e) {
+        var clickLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+
+        var visibility = map.getLayoutProperty(clickLayer, 'visibility');
+
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickLayer, 'visibility', 'visible');
+        }
+    };
+
+    var layers1 = document.getElementById('menu1');
+    layers1.appendChild(link);
+}
 
 
 
